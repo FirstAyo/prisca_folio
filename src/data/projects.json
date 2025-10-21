@@ -1,0 +1,60 @@
+{
+  "projects": [
+    {
+      "title": "Multi-currency Banking (Paga)",
+      "year": 2025,
+      "slug": "paga-consumer",
+      "summary": "Designing a multi-currency consumer banking experience with focus on seamless onboarding and transfers.",
+      "status": "completed",
+      "tags": ["Fintech", "Banking", "Design System"],
+      "image": "/assets/test.jpg"
+    },
+    {
+      "title": "HopStair \u2014 Mental Health App",
+      "year": 2023,
+      "slug": "hopstair",
+      "summary": "A guided mental wellness companion with progress tracking and CBT-informed flows.",
+      "status": "completed",
+      "tags": ["Health", "Mobile", "UX Research"],
+      "image": "/assets/test.jpg"
+    },
+    {
+      "title": "Paga 2.0 (WIP)",
+      "year": 2025,
+      "slug": "paga-2",
+      "summary": "Re-architecting navigation, payments hub, and business portal for scale.",
+      "status": "wip",
+      "tags": ["Fintech", "WIP"],
+      "image": "/assets/test.jpg"
+    },
+    {
+      "title": "Business Portal (WIP)",
+      "year": 2025,
+      "slug": "business-portal",
+      "summary": "Merchant tooling for payouts, reconciliation, and analytics.",
+      "status": "wip",
+      "tags": ["B2B", "Dashboard"],
+      "image": "/assets/test.jpg"
+    }
+  ],
+  "gloryBoard": [
+    {
+      "year": 2024,
+      "item": "Quidax Hackathon \u2014 Designed & built landing page in Framer with full interactions & animations."
+    },
+    {
+      "year": 2025,
+      "item": "Paga Consumer website \u2014 Led animations & interactions end-to-end in Framer."
+    }
+  ],
+  "park": [
+    {
+      "title": "Design system tokens exploration",
+      "date": "2025-03-14"
+    },
+    {
+      "title": "Micro-interactions study: email copy feedback",
+      "date": "2025-05-08"
+    }
+  ]
+}

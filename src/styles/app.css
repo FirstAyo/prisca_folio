@@ -1,0 +1,20 @@
+/* Tailwind v4+ single import */
+@import "tailwindcss";
+
+:root {
+  --radius: 16px;
+}
+
+.container-px {
+  @apply px-4 sm:px-6 lg:px-8;
+}
+.card {
+  @apply rounded-lg border border-neutral-200/60 dark:border-neutral-800/60 bg-white/70 dark:bg-neutral-900/70 backdrop-blur;
+}
+.btn {
+  @apply inline-flex items-center gap-2 rounded-xl border px-4 py-2 text-sm font-medium hover:shadow-sm transition;
+}
+
+.site-border {
+  @apply border-l border-r border-neutral-200/60
+}

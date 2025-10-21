@@ -1,0 +1,24 @@
+{
+  "title": "Product Designer",
+  "introHeadline": "I am Priscillia and I create awesome product & web experiences, using design & no-code tools.",
+  "email": "oladapoawosika.o@gmail.com",
+  "resumeUrl": "https://example.com/dapo-resume.pdf",
+  "sections": [
+    {
+      "label": "Work",
+      "path": "/work"
+    },
+    {
+      "label": "Glory board",
+      "path": "/glory"
+    },
+    {
+      "label": "The park",
+      "path": "/park"
+    },
+    {
+      "label": "Open for work",
+      "path": "/open-for-work"
+    }
+  ]
+}
