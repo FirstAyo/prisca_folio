@@ -10,6 +10,8 @@ import services from "../data/services.json"; // optional; used for teaser if pr
 import SpotlightCarousel from "../components/SpotlightCarousel.jsx";
 import Button from "../components/Button.jsx";
 import arrowIcon from "/assets/arrow-up-right.svg";
+import Carousel from "../components/Carousel.jsx";
+import AutoLTRMarquee from "../components/AutoLTRMarquee.jsx";
 
 /* -------------------- small animation presets -------------------- */
 const fadeUp = (delay = 0) => ({
@@ -107,6 +109,17 @@ export default function Home() {
         </div>
       </section>
 
+      <AutoLTRMarquee gap={16} duration={28} className="py-2">
+        {projects.projects.map((project, i) => (
+          <Carousel
+            key={i}
+            image={project.image}
+            to={project.slug} // ← pass `to` (or keep slug, both work)
+            title={project.title}
+          />
+        ))}
+      </AutoLTRMarquee>
+
       {/* =================== FEATURED PROJECTS =================== */}
       <section>
         <div className="flex items-end justify-between mb-4">
@@ -126,7 +139,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
       {/* =========== INTERACTIVE PROJECT GALLERY (PAN) =========== */}
       <section className="rounded-2xl overflow-hidden border border-neutral-200/60 dark:border-neutral-800/60">
         <div className="flex items-center justify-between px-4 py-3">
@@ -156,7 +168,6 @@ export default function Home() {
           showThumbs
         />
       </section>
-
       {/* ================== SERVICES TEASER (L→R) ================== */}
       {services?.services?.length ? (
         <section>
@@ -168,10 +179,8 @@ export default function Home() {
           </div>
         </section>
       ) : null}
-
       {/* ================== CASE STUDY HIGHLIGHT ================== */}
       {featured[0] ? <CaseStudyHighlight project={featured[0]} /> : null}
-
       {/* ================== TESTIMONIAL BLIP ================== */}
       {projects.testimonials?.length ? (
         <section className="grid md:grid-cols-[1fr_.9fr] gap-6 items-center">
@@ -196,7 +205,6 @@ export default function Home() {
           </motion.div>
         </section>
       ) : null}
-
       {/* ================== AVAILABILITY / CTA ================== */}
       <section className="rounded-2xl border border-neutral-200/60 dark:border-neutral-800/60 p-5 md:p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div>

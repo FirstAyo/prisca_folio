@@ -251,7 +251,7 @@ export default function NavBar() {
           <Button
             title="My Resume"
             image={arrowIcon}
-            className="flex items-center justify-center gap-1 bg-white text-black rounded-lg px-4 py-2 font-semibold border border-gray-300 dark:border-neutral-700 rounded-lg"
+            className="flex items-center justify-center gap-1 bg-white text-black px-4 py-2 font-semibold border border-gray-300 dark:border-neutral-700 rounded-lg"
             link="#"
           />
         </div>
