@@ -83,7 +83,7 @@ export default function ProjectCard({ project, i = 0 }) {
     >
       {/* Hover gradient ring */}
       <div
-        className="pointer-events-none absolute -inset-[1px] rounded-[18px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        className="pointer-events-none absolute -inset-1px rounded-[18px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         aria-hidden
         style={{
           background:
@@ -95,7 +95,7 @@ export default function ProjectCard({ project, i = 0 }) {
       {/* Card core (tilts) */}
       <div
         ref={cardRef}
-        className="relative overflow-hidden rounded-2xl border border-neutral-200/70 dark:border-neutral-800/70 bg-white/75 dark:bg-neutral-900/70 backdrop-blur will-change-transform shadow-sm"
+        className="relative overflow-hidden rounded-xl border border-neutral-200/70 dark:border-neutral-800/70 dark:bg-neutral-900/70 backdrop-blur will-change-transform shadow-sm"
         style={{
           transformStyle: "preserve-3d",
           backfaceVisibility: "hidden",
@@ -105,7 +105,7 @@ export default function ProjectCard({ project, i = 0 }) {
         }}
       >
         {/* Media */}
-        <div className="relative aspect-[16/10] overflow-hidden">
+        <div className="relative aspect-16/10 overflow-hidden">
           <img
             src={project.image}
             alt={project.title}

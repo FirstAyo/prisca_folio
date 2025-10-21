@@ -12,7 +12,7 @@
   @apply rounded-lg border border-neutral-200/60 dark:border-neutral-800/60 text-amber-100 dark:bg-neutral-900/70 backdrop-blur;
 }
 .btn {
-  @apply inline-flex items-center gap-2 rounded-xl border px-4 py-2 text-sm font-medium hover:shadow-sm transition;
+  @apply inline-flex items-center gap-2 rounded-lg border px-4 py-3 text-sm font-medium hover:shadow-sm transition;
 }
 
 .site-border {

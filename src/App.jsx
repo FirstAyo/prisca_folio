@@ -6,6 +6,7 @@ import Contact from "./pages/Contact.jsx";
 import Services from "./pages/Services.jsx";
 import Projects from "./pages/Projects.jsx";
 import About from "./pages/About.jsx";
+import NavBar from "./components/NavBar.jsx";
 
 const Page = ({ children }) => (
   <motion.div
@@ -23,7 +24,8 @@ export default function App() {
 
   return (
     <>
-      <Nav />
+      {/* <Nav /> */}
+      <NavBar />
       <div className="max-w-4xl mx-auto site-border">
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>

@@ -8,6 +8,8 @@ import site from "../data/site.json";
 import projects from "../data/projects.json"; // expects { projects: [...] }
 import services from "../data/services.json"; // optional; used for teaser if present
 import SpotlightCarousel from "../components/SpotlightCarousel.jsx";
+import Button from "../components/Button.jsx";
+import arrowIcon from "/assets/arrow-up-right.svg";
 
 /* -------------------- small animation presets -------------------- */
 const fadeUp = (delay = 0) => ({
@@ -78,25 +80,12 @@ export default function Home() {
             {...fadeUp(0.16)}
             className="flex items-center gap-3 mt-1"
           >
-            <a
-              href={site.resumeUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white/80 dark:bg-neutral-900/80 backdrop-blur text-sm font-medium shadow-sm hover:shadow transition"
-            >
-              View my resume
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                className="opacity-80"
-              >
-                <path
-                  fill="currentColor"
-                  d="M14 3h7v7h-2V6.41l-8.29 8.3-1.42-1.42 8.3-8.29H14V3z"
-                />
-              </svg>
-            </a>
+            <Button
+              title="View Projects"
+              image={arrowIcon}
+              className="flex items-center gap-1 bg-white text-black rounded-lg px-4 py-2 font-semibold"
+              link="#"
+            />
             <EmailCopy email={site.email} />
           </motion.div>
 
@@ -123,7 +112,7 @@ export default function Home() {
         <div className="flex items-end justify-between mb-4">
           <h2 className="text-xl font-semibold">Featured work</h2>
           <a
-            href="/work"
+            href="/projects"
             className="text-sm underline-offset-4 hover:underline opacity-90"
             title="See all projects"
           >
