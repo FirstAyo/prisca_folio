@@ -21,14 +21,14 @@ export default function ProjectCard({ project, i }) {
       </div>
       <div>
         <p className="text-sm opacity-80 mb-4 px-4">{project.summary}</p>
-        <div className="flex items-center gap-2 flex-wrap p-4">
-          <span className="text-xs rounded-full px-4 py-1 border border-neutral-300 dark:border-neutral-700">
+        <div className="flex items-center gap-1 md:gap-2 flex-wrap py-4 px-3 md:p-4">
+          <span className="text-xs rounded-full px-4 py-1 border border-amber-100 dark:border-neutral-700">
             {String(project.status).toUpperCase()}
           </span>
           {project.tags.map((t) => (
             <span
               key={t}
-              className="text-xs rounded-full px-3 py-1 bg-neutral-100 dark:bg-neutral-800"
+              className="text-xs rounded-full px-3 py-1 bg-gray-700 dark:bg-neutral-800"
             >
               {t}
             </span>

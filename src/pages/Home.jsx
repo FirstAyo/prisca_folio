@@ -7,7 +7,7 @@ import Typewriter from "../components/Typewriter.jsx";
 
 export default function Home() {
   return (
-    <main className="px-3 py-16 space-y-14">
+    <main className="px-2 py-16 space-y-14">
       <div className="space-y-3 lg:w-[50%] mx-auto flex flex-col items-center text-amber-100">
         <motion.h1
           initial={{ opacity: 0, y: 10 }}
