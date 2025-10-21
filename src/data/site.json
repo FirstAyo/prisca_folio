@@ -5,6 +5,10 @@
   "resumeUrl": "https://example.com/dapo-resume.pdf",
   "sections": [
     {
+      "label": "Home",
+      "path": "/"
+    },
+    {
       "label": "Projects",
       "path": "/projects"
     },
