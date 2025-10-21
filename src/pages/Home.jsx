@@ -3,6 +3,7 @@ import EmailCopy from "../components/EmailCopy.jsx";
 import site from "../data/site.json";
 import ProjectCard from "../components/ProjectCard.jsx";
 import data from "../data/projects.json";
+import Typewriter from "../components/Typewriter.jsx";
 
 export default function Home() {
   return (
@@ -14,7 +15,13 @@ export default function Home() {
           transition={{ duration: 0.6 }}
           className="leading-snug text-4xl italic"
         >
-          {site.title}
+          <Typewriter
+            text={site.title}
+            className="text-2xl font-semibold italic"
+            direction="ltr" // left → right
+            speed={100}
+            delay={0}
+          />
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 10 }}

@@ -2,10 +2,10 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import Nav from "./components/Nav.jsx";
 import Home from "./pages/Home.jsx";
-import Work from "./pages/Work.jsx";
-import GloryBoard from "./pages/GloryBoard.jsx";
-import ThePark from "./pages/ThePark.jsx";
-import OpenForWork from "./pages/OpenForWork.jsx";
+import Contact from "./pages/Contact.jsx";
+import Services from "./pages/Services.jsx";
+import Projects from "./pages/Projects.jsx";
+import About from "./pages/About.jsx";
 
 const Page = ({ children }) => (
   <motion.div
@@ -24,7 +24,7 @@ export default function App() {
   return (
     <>
       <Nav />
-      <div className=" max-w-4xl mx-auto site-border">
+      <div className="max-w-4xl mx-auto site-border">
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             <Route
@@ -36,34 +36,34 @@ export default function App() {
               }
             />
             <Route
-              path="/work"
+              path="/projects"
               element={
                 <Page>
-                  <Work />
+                  <Projects />
                 </Page>
               }
             />
             <Route
-              path="/glory"
+              path="/services"
               element={
                 <Page>
-                  <GloryBoard />
+                  <Services />
                 </Page>
               }
             />
             <Route
-              path="/park"
+              path="/about"
               element={
                 <Page>
-                  <ThePark />
+                  <About />
                 </Page>
               }
             />
             <Route
-              path="/open-for-work"
+              path="/contact"
               element={
                 <Page>
-                  <OpenForWork />
+                  <Contact />
                 </Page>
               }
             />

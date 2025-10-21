@@ -5,20 +5,20 @@
   "resumeUrl": "https://example.com/dapo-resume.pdf",
   "sections": [
     {
-      "label": "Work",
-      "path": "/work"
+      "label": "Projects",
+      "path": "/projects"
     },
     {
-      "label": "Glory board",
-      "path": "/glory"
+      "label": "Services",
+      "path": "/services"
     },
     {
-      "label": "The park",
-      "path": "/park"
+      "label": "About",
+      "path": "/about"
     },
     {
-      "label": "Open for work",
-      "path": "/open-for-work"
+      "label": "Contact",
+      "path": "/contact"
     }
   ]
 }
