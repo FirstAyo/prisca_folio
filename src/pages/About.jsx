@@ -281,7 +281,7 @@ export default function About() {
   return (
     <main
       ref={containerRef}
-      className="container-px max-w-6xl mx-auto py-12 space-y-12"
+      className="container-px max-w-6xl mx-auto py-12 space-y-12 text-white"
     >
       {/* inline keyframes for marquee/sweep already declared in ToolsMarquee */}
 

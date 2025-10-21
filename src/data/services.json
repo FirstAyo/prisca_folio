@@ -1,0 +1,84 @@
+{
+  "hero": {
+    "title": "Design that moves metrics.",
+    "subtitle": "From strategy to pixel-perfect production: I design systems, flows, and motion that make products click."
+  },
+  "services": [
+    {
+      "title": "Product Strategy",
+      "desc": "Define outcomes, user segments, and success metrics. Align discovery with delivery.",
+      "bullets": [
+        "Opportunity mapping",
+        "KPIs & North Stars",
+        "Roadmap shaping"
+      ],
+      "tag": "Discovery"
+    },
+    {
+      "title": "UI/UX Design",
+      "desc": "Research → IA → flows → hi-fi. Craft that balances clarity, speed, and delight.",
+      "bullets": [
+        "User flows & IA",
+        "Wireframes → Visuals",
+        "Design critiques"
+      ],
+      "tag": "Core"
+    },
+    {
+      "title": "Design Systems",
+      "desc": "Tokens, components, and guidelines that scale. Documented and dev-ready.",
+      "bullets": [
+        "Tokens & theming",
+        "Accessible components",
+        "Docs & governance"
+      ],
+      "tag": "Scale"
+    },
+    {
+      "title": "Prototyping & Motion",
+      "desc": "Click-throughs to cinematic micro-interactions. Motion that communicates state.",
+      "bullets": ["Framer/Figma prototypes", "Motion specs", "Lottie handoff"],
+      "tag": "Interaction"
+    },
+    {
+      "title": "No-Code Web (Framer)",
+      "desc": "Marketing experiences built fast with excellent performance & SEO.",
+      "bullets": ["Framer builds", "CMS wiring", "A/B test setups"],
+      "tag": "Web"
+    },
+    {
+      "title": "Usability & Research",
+      "desc": "Evidence-based improvements via testing and telemetry.",
+      "bullets": [
+        "Script & recruit",
+        "Moderated sessions",
+        "Hotjar/GA insights"
+      ],
+      "tag": "Evidence"
+    }
+  ],
+  "process": [
+    {
+      "step": "1",
+      "title": "Kickoff",
+      "desc": "Scope, constraints, and success criteria."
+    },
+    {
+      "step": "2",
+      "title": "Discovery",
+      "desc": "Users, jobs-to-be-done, and risks."
+    },
+    {
+      "step": "3",
+      "title": "Design",
+      "desc": "Flows → visuals → motion specs."
+    },
+    { "step": "4", "title": "Prototype", "desc": "Test hypotheses quickly." },
+    { "step": "5", "title": "Ship", "desc": "Specs, tokens, QA, and polish." }
+  ],
+  "cta": {
+    "line": "Have a product challenge?",
+    "sub": "Let’s turn it into a measurable win.",
+    "email": "oladapoawosika.o@gmail.com"
+  }
+}

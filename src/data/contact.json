@@ -1,0 +1,43 @@
+{
+  "hero": {
+    "title": "Let’s build something people love.",
+    "subtitle": "Tell me about your product, audience, and goals — I’ll get back to you within 24 hours."
+  },
+  "details": {
+    "email": "priscy.design.o@gmail.com",
+    "location": "Lagos, NG • Remote-friendly",
+    "hours": "Mon–Fri · 9am–6pm WAT",
+    "phone": "+234 (000) 000 0000"
+  },
+  "socials": [
+    {
+      "label": "Dribbble",
+      "href": "https://dribbble.com",
+      "handle": "@priscy_designs"
+    },
+    {
+      "label": "LinkedIn",
+      "href": "https://linkedin.com",
+      "handle": "in/priscy_designs"
+    },
+    {
+      "label": "X / Twitter",
+      "href": "https://twitter.com",
+      "handle": "@priscy_designs"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What’s your typical project timeline?",
+      "a": "2–10 weeks depending on scope. I ship weekly increments with clear milestones."
+    },
+    {
+      "q": "Do you work with dev teams?",
+      "a": "Yes — I partner closely with engineering. I provide specs, tokens, and motion blueprints."
+    },
+    {
+      "q": "What tools do you design in?",
+      "a": "Figma for design & systems, Framer for interactions, Lottie for motion when needed."
+    }
+  ]
+}
