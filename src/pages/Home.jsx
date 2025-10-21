@@ -8,7 +8,7 @@ import Typewriter from "../components/Typewriter.jsx";
 export default function Home() {
   return (
     <main className="px-3 py-16 space-y-14">
-      <div className="space-y-3 lg:w-[50%] mx-auto flex flex-col items-center">
+      <div className="space-y-3 lg:w-[50%] mx-auto flex flex-col items-center text-amber-100">
         <motion.h1
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -37,7 +37,7 @@ export default function Home() {
             href={site.resumeUrl}
             target="_blank"
             rel="noreferrer"
-            className="btn border-neutral-900 dark:border-white"
+            className="btn border-white"
           >
             View my resume
           </a>

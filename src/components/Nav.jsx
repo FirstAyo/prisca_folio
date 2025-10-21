@@ -3,13 +3,13 @@ import site from "../data/site.json";
 
 export default function Nav() {
   return (
-    <header className="sticky top-0 z-40 backdrop-blur bg-white/70 dark:bg-neutral-950/70 border-b border-neutral-200/60 dark:border-neutral-800/60">
-      <nav className="container-px max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-around lg:justify-between site-border h-20">
-        <Link to="/" className="font-semibold">
+    <header className="sticky top-0 z-40 backdrop-blur dark:bg-neutral-950/70 border-b border-neutral-200/60 dark:border-neutral-800/60">
+      <nav className="container-px max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-around lg:justify-between site-border md:h-20 py-2 md:py-0">
+        <Link to="/" className="font-semibold py-2 text-amber-100">
           Priscy Designs
         </Link>
-        <div>
-          <ul className="flex items-center gap-4 text-sm">
+        <div className="bg-gray-100 py-2 px-2 rounded-full">
+          <ul className="flex items-center gap-4 text-sm bg-white py-3 rounded-full px-2 shadow-2xl">
             {site.sections.map((s) => (
               <li key={s.path}>
                 <NavLink
