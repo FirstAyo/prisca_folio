@@ -254,7 +254,7 @@ function MagneticCTA() {
       <motion.a
         ref={ref}
         href={`mailto:${about.profile.email}`}
-        className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white/80 dark:bg-neutral-900/80 backdrop-blur text-sm font-medium shadow-sm"
+        className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-amber-500 dark:bg-neutral-900/80 backdrop-blur text-sm font-medium shadow-sm"
         style={{ x, y }}
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
