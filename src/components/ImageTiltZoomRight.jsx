@@ -89,7 +89,7 @@ export default function ImageTiltZoomRight({
             "group relative w-full overflow-hidden will-change-transform",
             rounded,
             border
-              ? "border border-neutral-200/60 dark:border-neutral-800/60"
+              ? "border border-[hsl(var(--border))]/60 dark:border-neutral-800/60"
               : "",
             shadow ? "shadow-sm hover:shadow transition" : "transition",
             "bg-transparent", // transparent avoids any halo while tilting
@@ -113,7 +113,7 @@ export default function ImageTiltZoomRight({
           />
           {title && (
             <div className="pointer-events-none absolute inset-x-0 bottom-0 p-3">
-              <div className="rounded-xl px-2 py-1 text-xs font-medium bg-black/60 text-white dark:bg-white/15 backdrop-blur-sm">
+              <div className="rounded-xl px-2 py-1 text-xs font-medium bg-black/60 text-[hsl(var(--primary-fg))] dark:bg-white/15 backdrop-blur-sm">
                 {title}
               </div>
             </div>

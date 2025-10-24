@@ -111,7 +111,7 @@ export default function SpotlightCarousel({
 
   return (
     <section
-      className="relative overflow-hidden rounded-2xl border border-neutral-200/60 dark:border-neutral-800/60 bg-white/60 dark:bg-neutral-900/60 backdrop-blur"
+      className="relative overflow-hidden rounded-2xl border border-[hsl(var(--border))]/60 dark:border-neutral-800/60 bg-white/60 dark:bg-neutral-900/60 backdrop-blur"
       onMouseEnter={() => setPlaying(false)}
       onMouseLeave={() => setPlaying(true)}
       onFocus={() => setPlaying(false)}
@@ -127,14 +127,14 @@ export default function SpotlightCarousel({
           <button
             aria-label="Previous slide"
             onClick={goPrev}
-            className="h-9 w-9 grid place-items-center rounded-xl border border-neutral-300 dark:border-neutral-700 hover:shadow-sm active:translate-y-[1px]"
+            className="h-9 w-9 grid place-items-center rounded-xl border border-[hsl(var(--border))] dark:border-neutral-700 hover:shadow-sm active:translate-y-[1px]"
           >
             ←
           </button>
           <button
             aria-label="Next slide"
             onClick={goNext}
-            className="h-9 w-9 grid place-items-center rounded-xl border border-neutral-300 dark:border-neutral-700 hover:shadow-sm active:translate-y-[1px]"
+            className="h-9 w-9 grid place-items-center rounded-xl border border-[hsl(var(--border))] dark:border-neutral-700 hover:shadow-sm active:translate-y-[1px]"
           >
             →
           </button>
@@ -198,7 +198,7 @@ export default function SpotlightCarousel({
 
                 {/* caption chip */}
                 <figcaption className="absolute bottom-3 left-3 pointer-events-none">
-                  <span className="inline-flex items-center gap-2 text-xs px-2.5 py-1 rounded-lg bg-black/55 text-white dark:bg-white/12 backdrop-blur">
+                  <span className="inline-flex items-center gap-2 text-xs px-2.5 py-1 rounded-lg bg-black/55 text-[hsl(var(--primary-fg))] dark:bg-white/12 backdrop-blur">
                     {current.title}
                   </span>
                 </figcaption>
@@ -227,7 +227,7 @@ export default function SpotlightCarousel({
                     "relative flex-shrink-0 w-36 h-20 rounded-lg overflow-hidden border",
                     active
                       ? "border-sky-400/70 shadow"
-                      : "border-neutral-200/60 dark:border-neutral-800/60",
+                      : "border-[hsl(var(--border))]/60 dark:border-neutral-800/60",
                   ].join(" ")}
                   title={it.title}
                 >
@@ -237,7 +237,7 @@ export default function SpotlightCarousel({
                     className="h-full w-full object-cover"
                     loading="lazy"
                   />
-                  <span className="absolute inset-x-0 bottom-0 text-[10px] truncate px-2 py-1 bg-black/45 text-white backdrop-blur">
+                  <span className="absolute inset-x-0 bottom-0 text-[10px] truncate px-2 py-1 bg-black/45 text-[hsl(var(--primary-fg))] backdrop-blur">
                     {it.title}
                   </span>
                 </button>

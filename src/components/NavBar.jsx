@@ -3,29 +3,10 @@ import { Link, NavLink } from "react-router-dom";
 import menuItems from "../data/menu.json";
 import Button from "./Button";
 import { Menu, MoonIcon, SunIcon, X } from "lucide-react";
+import ThemeToggle from "./ThemeToggle.jsx";
 import arrowIcon from "/assets/arrow-up-right.svg";
 
 export default function NavBar() {
-  // THEME
-  const [theme, setTheme] = useState(() => {
-    if (typeof window === "undefined") return "light";
-    const stored = localStorage.getItem("theme");
-    if (stored === "light" || stored === "dark") return stored;
-    return window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
-  });
-
-  useEffect(() => {
-    if (typeof document === "undefined") return;
-    const root = document.documentElement;
-    if (theme === "dark") root.classList.add("dark");
-    else root.classList.remove("dark");
-    localStorage.setItem("theme", theme);
-  }, [theme]);
-
-  const toggleTheme = () => setTheme((t) => (t === "dark" ? "light" : "dark"));
-
   // MOBILE MENU
   const [mobileOpen, setMobileOpen] = useState(false);
   const toggleBtnRef = useRef(null);
@@ -77,7 +58,7 @@ export default function NavBar() {
       </a>
 
       <header
-        className="sticky top-0 z-40 backdrop-blur dark:bg-neutral-950/70 border-b border-neutral-200/60 dark:border-neutral-800/60"
+        className="sticky top-0 z-40 backdrop-blur dark:bg-neutral-950/70 border-b border-[hsl(var(--border))]/60 dark:border-neutral-800/60"
         aria-label="Site header"
       >
         <div className="">
@@ -89,16 +70,16 @@ export default function NavBar() {
             <div>
               <Link
                 to="/"
-                className="font-bold text-xl text-white dark:text-gray-100"
+                className="font-bold text-xl text-[hsl(var(--primary-fg))] dark:text-gray-100"
                 onClick={closeMobile}
               >
-                Priscy<span className="text-blue-500">Designs</span>
+                Priscy<span className="text-[hsl(var(--primary))]">Designs</span>
               </Link>
             </div>
 
             {/* Desktop menu */}
             <ul
-              className="hidden lg:flex lg:flex-row gap-2 text-md font-medium text-white dark:text-gray-300 bg-gray-600 rounded-xl py-2"
+              className="hidden lg:flex lg:flex-row gap-2 text-md font-medium text-[hsl(var(--primary-fg))] dark:text-gray-300 bg-gray-600 rounded-lg py-2 px-0.5 border border-[hsl(var(--border))]"
               role="list"
             >
               {menuData.map((item) => (
@@ -122,25 +103,7 @@ export default function NavBar() {
 
             {/* Desktop actions */}
             <div className="hidden lg:flex items-center gap-4">
-              <button
-                type="button"
-                onClick={toggleTheme}
-                className="border border-gray-300 dark:border-neutral-700 rounded-lg py-1 px-2 text-sm text-gray-700 dark:text-gray-200 bg-white dark:bg-neutral-900 hover:bg-gray-100 dark:hover:bg-neutral-800"
-                aria-label={`Switch to ${
-                  theme === "dark" ? "light" : "dark"
-                } mode`}
-              >
-                {theme === "dark" ? (
-                  <SunIcon aria-hidden="true" />
-                ) : (
-                  <MoonIcon aria-hidden="true" />
-                )}
-              </button>
-              {/* <Button
-                title="Let's Talk"
-                bgColor="bg-black dark:bg-blue-600"
-                hoverBgColor="hover:bg-blue-500 dark:hover:bg-blue-500"
-              /> */}
+              <ThemeToggle className="" />
 
               <Button
                 title="My Resume"
@@ -155,7 +118,7 @@ export default function NavBar() {
               ref={toggleBtnRef}
               type="button"
               onClick={toggleMobile}
-              className="lg:hidden border border-gray-300 dark:border-neutral-700 rounded-lg py-1 px-3 text-sm text-gray-700 dark:text-gray-200 bg-white dark:bg-neutral-900"
+              className="lg:hidden border border-[hsl(var(--border))] dark:border-neutral-700 rounded-lg py-1 px-3 text-sm text-gray-700 dark:text-gray-200 bg-white dark:bg-neutral-900"
               aria-controls="mobile-drawer"
               aria-expanded={mobileOpen}
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
@@ -189,7 +152,7 @@ export default function NavBar() {
         ref={drawerRef}
         tabIndex={-1}
         className={`fixed inset-y-0 left-0 z-50 w-72 max-w-[85%] lg:hidden
-                    bg-white dark:bg-neutral-900 border-r border-gray-300 dark:border-neutral-800
+                    bg-white dark:bg-neutral-900 border-r border-[hsl(var(--border))] dark:border-neutral-800
                     transition-transform duration-300 ease-out
                     ${mobileOpen ? "translate-x-0" : "-translate-x-full"}`}
         role="dialog"
@@ -197,14 +160,14 @@ export default function NavBar() {
         aria-labelledby="mobile-title"
       >
         {/* Top: Brand */}
-        <div className="px-5 pt-4 pb-3 border-b border-gray-200 dark:border-neutral-800">
+        <div className="px-5 pt-4 pb-3 border-b border-[hsl(var(--border))] dark:border-neutral-800">
           <Link
             to="/"
             className="font-bold text-2xl text-gray-900 dark:text-gray-100"
             id="mobile-title"
             onClick={closeMobile}
           >
-            Priscy<span className="text-blue-500">Designs</span>
+            Priscy<span className="text-[hsl(var(--primary))]">Designs</span>
           </Link>
         </div>
 
@@ -229,29 +192,13 @@ export default function NavBar() {
         </nav>
 
         {/* Bottom: Actions */}
-        <div className="mt-auto absolute bottom-0 left-0 right-0 border-t border-gray-200 dark:border-neutral-800 p-4 flex flex-col justify-between gap-3">
-          <button
-            type="button"
-            onClick={toggleTheme}
-            className="flex items-center justify-center gap-2 border border-gray-300 dark:border-neutral-700 rounded-lg py-4 px-3 text-sm text-gray-700 dark:text-gray-200 bg-white dark:bg-neutral-900 hover:bg-gray-100 dark:hover:bg-neutral-800"
-            aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-          >
-            {theme === "dark" ? (
-              <SunIcon size={18} aria-hidden="true" />
-            ) : (
-              <MoonIcon size={18} aria-hidden="true" />
-            )}
-            <span>
-              {theme === "dark"
-                ? "Switch to Light Mode"
-                : "Switch to Dark Mode"}
-            </span>
-          </button>
+        <div className="mt-auto absolute bottom-0 left-0 right-0 border-t border-[hsl(var(--border))] dark:border-neutral-800 p-4 flex flex-col justify-between gap-3">
+          <ThemeToggle className="" />
 
           <Button
             title="My Resume"
             image={arrowIcon}
-            className="flex items-center justify-center gap-1 bg-white text-black px-4 py-2 font-semibold border border-gray-300 dark:border-neutral-700 rounded-lg"
+            className="flex items-center justify-center gap-1 bg-white text-black px-4 py-2 font-semibold border border-[hsl(var(--border))] dark:border-neutral-700 rounded-lg"
             link="#"
           />
         </div>

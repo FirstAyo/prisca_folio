@@ -95,7 +95,7 @@ export default function ProjectCard({ project, i = 0 }) {
       {/* Card core (tilts) */}
       <div
         ref={cardRef}
-        className="relative overflow-hidden rounded-xl border border-neutral-200/70 dark:border-neutral-800/70 dark:bg-neutral-900/70 backdrop-blur will-change-transform shadow-sm"
+        className="relative overflow-hidden rounded-xl border border-[hsl(var(--border))]/70 dark:border-neutral-800/70 dark:bg-neutral-900/70 backdrop-blur will-change-transform shadow-sm"
         style={{
           transformStyle: "preserve-3d",
           backfaceVisibility: "hidden",
@@ -127,7 +127,7 @@ export default function ProjectCard({ project, i = 0 }) {
         </div>
 
         {/* Title row */}
-        <div className="flex items-center justify-between border-t border-neutral-200/70 dark:border-neutral-800/70 px-5 py-4">
+        <div className="flex items-center justify-between border-t border-[hsl(var(--border))]/70 dark:border-neutral-800/70 px-5 py-4">
           <h3 className="text-lg font-semibold leading-tight">
             {project.title}
           </h3>
@@ -190,7 +190,7 @@ function Badge({ tone, status, compact = false }) {
         tone.border,
         tone.text,
         pulse ? "animate-[pulse_2.8s_ease-in-out_infinite]" : "",
-        compact ? "backdrop-blur bg-black/40 text-white border-white/30" : "bg-white/70 dark:bg-neutral-900/70 backdrop-blur",
+        compact ? "backdrop-blur bg-black/40 text-[hsl(var(--primary-fg))] border-white/30" : "bg-white/70 dark:bg-neutral-900/70 backdrop-blur",
       ].join(" ")}
       title={text}
     >
@@ -208,7 +208,7 @@ function Badge({ tone, status, compact = false }) {
 
 function Chip({ children }) {
   return (
-    <span className="inline-flex items-center rounded-full bg-black/40 text-white border border-white/30 backdrop-blur px-2.5 py-1 text-[10px]">
+    <span className="inline-flex items-center rounded-full bg-black/40 text-[hsl(var(--primary-fg))] border border-white/30 backdrop-blur px-2.5 py-1 text-[10px]">
       {children}
     </span>
   );
@@ -216,7 +216,7 @@ function Chip({ children }) {
 
 function Tag({ children }) {
   return (
-    <span className="text-xs rounded-full px-3 py-1 border border-neutral-200 dark:border-neutral-800 bg-white/60 dark:bg-neutral-900/60 backdrop-blur transition-transform hover:-translate-y-0.5 active:translate-y-0">
+    <span className="text-xs rounded-full px-3 py-1 border border-[hsl(var(--border))] dark:border-neutral-800 bg-white/60 dark:bg-neutral-900/60 backdrop-blur transition-transform hover:-translate-y-0.5 active:translate-y-0">
       {children}
     </span>
   );
@@ -228,7 +228,7 @@ function GhostButton({ href, children }) {
       href={href}
       target="_blank"
       rel="noreferrer"
-      className="inline-flex items-center justify-center text-sm rounded-lg border border-neutral-300 dark:border-neutral-700 px-3.5 py-2 hover:shadow-sm transition active:translate-y-[1px]"
+      className="inline-flex items-center justify-center text-sm rounded-lg border border-[hsl(var(--border))] dark:border-neutral-700 px-3.5 py-2 hover:shadow-sm transition active:translate-y-[1px]"
     >
       {children}
     </a>
@@ -245,9 +245,9 @@ function toneForStatus(status) {
   const s = String(status || "").toLowerCase();
   if (/live|launched|prod/.test(s))
     return {
-      text: "text-emerald-700 dark:text-emerald-400",
+      text: "text-[hsl(var(--primary))] dark:text-[hsl(var(--primary))]",
       border: "border-emerald-200/60 dark:border-emerald-900/50",
-      dot: "bg-emerald-500",
+      dot: "bg-[hsl(var(--primary))]",
     };
   if (/wip|in.?progress|ongoing/.test(s))
     return {
@@ -258,13 +258,13 @@ function toneForStatus(status) {
   if (/archived|deprecated/.test(s))
     return {
       text: "text-neutral-600 dark:text-neutral-400",
-      border: "border-neutral-200/60 dark:border-neutral-800/60",
+      border: "border-[hsl(var(--border))]/60 dark:border-neutral-800/60",
       dot: "bg-neutral-500",
     };
   // default: done/complete
   return {
-    text: "text-sky-700 dark:text-sky-400",
+    text: "text-[hsl(var(--primary))] dark:text-[hsl(var(--primary))]",
     border: "border-sky-200/60 dark:border-sky-900/50",
-    dot: "bg-sky-500",
+    dot: "bg-[hsl(var(--primary))]",
   };
 }

@@ -72,13 +72,13 @@ export default function Nav() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-40 backdrop-blur dark:bg-neutral-950/70 border-b border-neutral-200/60 dark:border-neutral-800/60">
+    <header className="sticky top-0 z-40 backdrop-blur dark:bg-neutral-950/70 border-b border-[hsl(var(--border))]/60 dark:border-neutral-800/60">
       <nav className="container-px max-w-6xl mx-auto flex items-center justify-between h-16 md:h-20 dark:text-neutral-100">
         {/* Left: Brand + mobile burger */}
         <div className="flex items-center gap-2">
           <button
             type="button"
-            className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-xl border border-neutral-300 dark:border-neutral-700 hover:shadow-sm active:translate-y-[1px]"
+            className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-xl border border-[hsl(var(--border))] dark:border-neutral-700 hover:shadow-sm active:translate-y-px"
             onClick={() => setOpen(true)}
             aria-label="Open menu"
             aria-controls="mobile-drawer"
@@ -86,7 +86,7 @@ export default function Nav() {
           >
             <Menu size={18} />
           </button>
-          <Link to="/" className="font-semibold py-2 uppercase text-white">
+          <Link to="/" className="font-semibold py-2 uppercase text-[hsl(var(--primary-fg))]">
             Priscy Designs
           </Link>
         </div>
@@ -131,7 +131,7 @@ export default function Nav() {
             type="button"
             onClick={toggle}
             aria-label="Toggle theme"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-neutral-300 dark:border-neutral-700 hover:shadow-sm"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-[hsl(var(--border))] dark:border-neutral-700 hover:shadow-sm"
           >
             {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
           </button>
@@ -156,7 +156,7 @@ export default function Nav() {
         id="mobile-drawer"
         className={[
           "fixed inset-y-0 left-0 z-50 w-[84%] max-w-[22rem] md:hidden",
-          "border-r border-neutral-200/60 dark:border-neutral-800/60",
+          "border-r border-[hsl(var(--border))]/60 dark:border-neutral-800/60",
           "bg-white/90 dark:bg-neutral-950/90 backdrop-blur",
           "transition-transform will-change-transform",
           open ? "translate-x-0" : "-translate-x-full",
@@ -180,7 +180,7 @@ export default function Nav() {
               type="button"
               onClick={() => setOpen(false)}
               aria-label="Close menu"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-neutral-300 dark:border-neutral-700 hover:shadow-sm active:translate-y-[1px]"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-[hsl(var(--border))] dark:border-neutral-700 hover:shadow-sm active:translate-y-[1px]"
             >
               <X size={18} />
             </button>
@@ -199,7 +199,7 @@ export default function Nav() {
                     [
                       "block px-3 py-3 rounded-lg transition",
                       isActive
-                        ? "bg-neutral-900 text-white dark:bg-white dark:text-black"
+                        ? "bg-neutral-900 text-[hsl(var(--primary-fg))] dark:bg-white dark:text-black"
                         : "hover:bg-neutral-100 dark:hover:bg-neutral-800",
                     ].join(" ")
                   }
@@ -212,11 +212,11 @@ export default function Nav() {
         </div>
 
         {/* Drawer footer — resume button pinned to bottom */}
-        <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-neutral-200/60 dark:border-neutral-800/60 bg-inherit">
+        <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-[hsl(var(--border))]/60 dark:border-neutral-800/60 bg-inherit">
           <Button
             title="My Resume"
             image={arrowIcon}
-            className="w-full flex items-center justify-center gap-1 bg-black text-white dark:bg-white dark:text-black rounded-lg px-4 py-3 font-semibold"
+            className="w-full flex items-center justify-center gap-1 bg-black text-[hsl(var(--primary-fg))] dark:bg-white dark:text-black rounded-lg px-4 py-3 font-semibold"
             link={site.resumeUrl || "#"}
           />
         </div>
@@ -233,7 +233,7 @@ function ThemeToggle({ theme, onToggle }) {
       type="button"
       onClick={onToggle}
       aria-label="Toggle dark mode"
-      className="inline-flex items-center gap-2 h-10 px-3 rounded-xl border border-neutral-300 dark:border-neutral-700 hover:shadow-sm active:translate-y-[1px]"
+      className="inline-flex items-center gap-2 h-10 px-3 rounded-xl border border-[hsl(var(--border))] dark:border-neutral-700 hover:shadow-sm active:translate-y-[1px]"
       title={isDark ? "Switch to light" : "Switch to dark"}
     >
       {isDark ? <Sun size={16} /> : <Moon size={16} />}

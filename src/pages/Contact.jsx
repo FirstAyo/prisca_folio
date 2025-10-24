@@ -5,7 +5,7 @@ import contact from "../data/contact.json";
 /**
  * Contact — a premium, animation-rich contact experience
  * Features:
- *  - Hero with parallax orbs & soft gradient sweep
+ *  - Hero with parallax orbs & soft linear sweep
  *  - JSON-driven details, socials, and FAQs
  *  - Animated form with validation + honeypot (anti-spam)
  *  - Magnetic submit button + progress state
@@ -253,7 +253,7 @@ export default function Contact() {
     <main className="container-px max-w-6xl mx-auto py-12 space-y-12 text-white">
       {/* HERO */}
       <section className="relative overflow-hidden rounded-2xl">
-        {/* gradient orbs with subtle parallax sweep */}
+        {/* linear orbs with subtle parallax sweep */}
         <div className="pointer-events-none absolute -inset-24 -z-10">
           <div className="absolute top-10 left-10 w-64 h-64 rounded-full blur-3xl bg-fuchsia-400/25 animate-[pulse_5s_ease-in-out_infinite]" />
           <div className="absolute bottom-10 right-10 w-72 h-72 rounded-full blur-3xl bg-sky-400/25 animate-[pulse_6s_ease-in-out_infinite]" />
@@ -489,7 +489,7 @@ export default function Contact() {
               className="h-full w-full object-cover"
               loading="lazy"
             />
-            <div className="absolute inset-0 bg-gradient-to-tr from-black/10 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-tr from-black/10 to-transparent" />
             <div className="absolute bottom-2 left-2 text-xs bg-black/60 text-white px-2 py-1 rounded-md backdrop-blur">
               {contact.details.location}
             </div>

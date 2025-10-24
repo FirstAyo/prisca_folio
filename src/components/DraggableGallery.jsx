@@ -206,7 +206,7 @@ function TiltCard({ x, y, w, h, item, onOpen }) {
         ref={cardRef}
         type="button"
         onClick={onOpen} // 👈 reliable on touch; guarded by draggingRef
-        className="group relative h-full w-full overflow-hidden rounded-2xl border border-neutral-200/60 dark:border-neutral-800/60 bg-transparent dark:bg-neutral-900 will-change-transform"
+        className="group relative h-full w-full overflow-hidden rounded-2xl border border-[hsl(var(--border))]/60 dark:border-neutral-800/60 bg-transparent dark:bg-neutral-900 will-change-transform"
         style={{ transformStyle: "preserve-3d", perspective: 800 }}
         whileHover={{ boxShadow: "0 10px 30px rgba(0,0,0,0.12)" }}
         whileTap={{ scale: 0.98 }} // nice tap feedback on mobile
@@ -227,7 +227,7 @@ function TiltCard({ x, y, w, h, item, onOpen }) {
             loading="lazy"
           />
           <div className="pointer-events-none absolute inset-x-0 bottom-0 p-3">
-            <div className="rounded-xl px-2 py-1 text-xs font-medium bg-black/60 text-white dark:bg-white/15 backdrop-blur-sm">
+            <div className="rounded-xl px-2 py-1 text-xs font-medium bg-black/60 text-[hsl(var(--primary-fg))] dark:bg-white/15 backdrop-blur-sm">
               {item.title}
             </div>
           </div>

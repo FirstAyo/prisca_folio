@@ -17,7 +17,7 @@ export default function EmailCopy({ email }) {
   return (
     <button
       onClick={copy}
-      className="btn border-neutral-300 dark:border-neutral-700 hover:bg-neutral-50 hover:text-black dark:hover:bg-neutral-800"
+      className="btn border-[hsl(var(--border))] dark:border-neutral-700 hover:bg-neutral-50 hover:text-black dark:hover:bg-neutral-800"
       aria-live="polite"
     >
       {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
