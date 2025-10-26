@@ -228,7 +228,7 @@ function GhostButton({ href, children }) {
       href={href}
       target="_blank"
       rel="noreferrer"
-      className="inline-flex items-center justify-center text-sm rounded-lg border border-[hsl(var(--border))] dark:border-neutral-700 px-3.5 py-2 hover:shadow-sm transition active:translate-y-[1px]"
+      className="inline-flex items-center justify-center text-sm rounded-lg border border-[hsl(var(--border))] dark:border-neutral-700 px-3.5 py-2 hover:shadow-sm transition active:translate-y-px"
     >
       {children}
     </a>

@@ -111,7 +111,7 @@ export default function SpotlightCarousel({
 
   return (
     <section
-      className="relative overflow-hidden rounded-2xl border border-[hsl(var(--border))]/60 dark:border-neutral-800/60 bg-white/60 dark:bg-neutral-900/60 backdrop-blur"
+      className="relative overflow-hidden rounded-2xl border border-[hsl(var(--border))]/60 dark:border-neutral-800/60 dark:bg-neutral-900/60 backdrop-blur"
       onMouseEnter={() => setPlaying(false)}
       onMouseLeave={() => setPlaying(true)}
       onFocus={() => setPlaying(false)}
@@ -127,14 +127,14 @@ export default function SpotlightCarousel({
           <button
             aria-label="Previous slide"
             onClick={goPrev}
-            className="h-9 w-9 grid place-items-center rounded-xl border border-[hsl(var(--border))] dark:border-neutral-700 hover:shadow-sm active:translate-y-[1px]"
+            className="h-9 w-9 grid place-items-center rounded-xl border border-[hsl(var(--border))] dark:border-neutral-700 hover:shadow-sm active:translate-y-px"
           >
             ←
           </button>
           <button
             aria-label="Next slide"
             onClick={goNext}
-            className="h-9 w-9 grid place-items-center rounded-xl border border-[hsl(var(--border))] dark:border-neutral-700 hover:shadow-sm active:translate-y-[1px]"
+            className="h-9 w-9 grid place-items-center rounded-xl border border-[hsl(var(--border))] dark:border-neutral-700 hover:shadow-sm active:translate-y-px"
           >
             →
           </button>
@@ -147,7 +147,7 @@ export default function SpotlightCarousel({
         <div className="absolute inset-x-0 top-0 h-[3px] bg-neutral-200/60 dark:bg-neutral-800/60 overflow-hidden">
           <span
             key={progressKey}
-            className="block h-full bg-gradient-to-r from-sky-400 via-fuchsia-400 to-rose-400"
+            className="block h-full bg-linear-to-r from-sky-400 via-fuchsia-400 to-rose-400"
             style={{
               width: playing ? "100%" : "0%",
               animation: playing ? `scrolly ${autoplayMs}ms linear` : "none",
@@ -158,7 +158,7 @@ export default function SpotlightCarousel({
           @keyframes scrolly { from { transform: translateX(-100%) } to { transform: translateX(0%) } }
         `}</style>
 
-        <div className="px-4 pb-4">
+        <div className="px-4 py-4">
           <AnimatePresence mode="wait">
             <motion.div
               key={index}
@@ -169,7 +169,7 @@ export default function SpotlightCarousel({
             >
               <figure
                 ref={heroRef}
-                className="relative overflow-hidden rounded-xl aspect-[16/9] md:aspect-[21/9] will-change-transform"
+                className="relative overflow-hidden rounded-xl aspect-video md:aspect-21/9 will-change-transform"
                 style={{
                   transformStyle: "preserve-3d",
                   backfaceVisibility: "hidden",
@@ -224,7 +224,7 @@ export default function SpotlightCarousel({
                   key={i}
                   onClick={() => setIndex(i)}
                   className={[
-                    "relative flex-shrink-0 w-36 h-20 rounded-lg overflow-hidden border",
+                    "relative shrink-0 w-36 h-20 rounded-lg overflow-hidden border",
                     active
                       ? "border-sky-400/70 shadow"
                       : "border-[hsl(var(--border))]/60 dark:border-neutral-800/60",

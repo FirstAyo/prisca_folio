@@ -70,10 +70,11 @@ export default function NavBar() {
             <div>
               <Link
                 to="/"
-                className="font-bold text-xl text-[hsl(var(--primary-fg))] dark:text-gray-100"
+                className="font-bold text-xl dark:text-gray-100"
                 onClick={closeMobile}
               >
-                Priscy<span className="text-[hsl(var(--primary))]">Designs</span>
+                Priscy
+                <span className="text-[hsl(var(--primary))]">Designs</span>
               </Link>
             </div>
 

@@ -44,7 +44,7 @@ function MagneticCTA({ email, children }) {
     <motion.a
       ref={ref}
       href={`mailto:${email}`}
-      className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white/80 dark:bg-neutral-900/80 backdrop-blur text-sm font-medium shadow-sm"
+      className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-neutral-300 dark:border-neutral-700 dark:bg-neutral-900/80 backdrop-blur text-sm font-medium shadow-sm"
       style={{ translateX: offset.x, translateY: offset.y }}
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
@@ -100,10 +100,10 @@ function ServiceCard({ s, index }) {
     <motion.div {...anim}>
       <div
         ref={cardRef}
-        className="group relative overflow-hidden rounded-2xl border border-neutral-200/60 dark:border-neutral-800/60 bg-white/70 dark:bg-neutral-900/70 backdrop-blur p-5 shadow-sm will-change-transform"
+        className="group relative overflow-hidden rounded-2xl border border-neutral-200/60 dark:border-neutral-800/60  dark:bg-neutral-900/70 backdrop-blur p-5 shadow-sm will-change-transform"
         style={{ backfaceVisibility: "hidden", transformStyle: "preserve-3d" }}
       >
-        <div className="mb-2 inline-flex items-center gap-2 text-xs font-medium px-2 py-1 rounded-lg bg-neutral-100 dark:bg-neutral-800">
+        <div className="mb-2 inline-flex items-center gap-2 text-xs font-medium px-2 py-1 rounded-lg border dark:bg-neutral-800">
           {s.tag}
         </div>
         <div className="text-lg font-semibold">{s.title}</div>
@@ -140,7 +140,7 @@ function ProcessRail({ steps }) {
             <motion.div
               key={i}
               {...slideL(i * 0.05)}
-              className="card p-4 text-center"
+              className="border rounded-2xl p-4 text-center"
             >
               <div className="text-xs opacity-70 mb-1">Step {s.step}</div>
               <div className="font-medium">{s.title}</div>
@@ -158,13 +158,13 @@ export default function Services() {
   const { hero, services, process, cta } = data;
 
   return (
-    <main className="container-px max-w-6xl mx-auto py-12 space-y-10 text-white">
+    <main className="container-px max-w-6xl mx-auto py-12 space-y-10">
       {/* HERO */}
       <section className="relative overflow-hidden rounded-2xl">
         {/* background orbs */}
         <div className="pointer-events-none absolute -inset-24 -z-10">
-          <div className="absolute top-10 left-10 w-64 h-64 rounded-full blur-3xl bg-fuchsia-400/25 animate-[pulse_6s_ease-in-out_infinite]" />
-          <div className="absolute bottom-10 right-10 w-72 h-72 rounded-full blur-3xl bg-sky-400/25 animate-[pulse_7s_ease-in-out_infinite]" />
+          <div className="absolute top-10 left-10 w-64 h-64 rounded-full blur-3xl animate-[pulse_6s_ease-in-out_infinite]" />
+          <div className="absolute bottom-10 right-10 w-72 h-72 rounded-full blur-3xl animate-[pulse_7s_ease-in-out_infinite]" />
         </div>
 
         <motion.h1

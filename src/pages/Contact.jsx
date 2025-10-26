@@ -43,47 +43,47 @@ const mockSubmit = (payload) =>
   new Promise((res) => setTimeout(() => res({ ok: true }), 1200));
 
 // ---------- confetti (tiny, CSS based) ----------
-function Confetti() {
-  return (
-    <>
-      <style>{`
-        .confetti { position: absolute; width: 8px; height: 8px; top: 50%; left: 50%; border-radius: 2px; opacity: 0; }
-        @keyframes pop {
-          0% { transform: translate(-50%,-50%) scale(0.4) rotate(0deg); opacity: 0; }
-          20% { opacity: 1; }
-          100% { transform: translate(var(--x), var(--y)) scale(1) rotate(360deg); opacity: 0; }
-        }
-      `}</style>
-      {Array.from({ length: 28 }).map((_, i) => {
-        const angle = (i / 28) * Math.PI * 2;
-        const dist = 120 + (i % 7) * 12;
-        const x = Math.cos(angle) * dist;
-        const y = Math.sin(angle) * dist;
-        const color = [
-          "#22d3ee",
-          "#a78bfa",
-          "#f472b6",
-          "#34d399",
-          "#facc15",
-          "#60a5fa",
-        ][i % 6];
-        return (
-          <span
-            key={i}
-            className="confetti"
-            style={{
-              background: color,
-              animation: `pop 900ms ease-out forwards`,
-              animationDelay: `${(i % 7) * 20}ms`,
-              "--x": `${x}px`,
-              "--y": `${y}px`,
-            }}
-          />
-        );
-      })}
-    </>
-  );
-}
+// function Confetti() {
+//   return (
+//     <>
+//       <style>{`
+//         .confetti { position: absolute; width: 8px; height: 8px; top: 50%; left: 50%; border-radius: 2px; opacity: 0; }
+//         @keyframes pop {
+//           0% { transform: translate(-50%,-50%) scale(0.4) rotate(0deg); opacity: 0; }
+//           20% { opacity: 1; }
+//           100% { transform: translate(var(--x), var(--y)) scale(1) rotate(360deg); opacity: 0; }
+//         }
+//       `}</style>
+//       {Array.from({ length: 28 }).map((_, i) => {
+//         const angle = (i / 28) * Math.PI * 2;
+//         const dist = 120 + (i % 7) * 12;
+//         const x = Math.cos(angle) * dist;
+//         const y = Math.sin(angle) * dist;
+//         const color = [
+//           "#22d3ee",
+//           "#a78bfa",
+//           "#f472b6",
+//           "#34d399",
+//           "#facc15",
+//           "#60a5fa",
+//         ][i % 6];
+//         return (
+//           <span
+//             key={i}
+//             className="confetti"
+//             style={{
+//               background: color,
+//               animation: `pop 900ms ease-out forwards`,
+//               animationDelay: `${(i % 7) * 20}ms`,
+//               "--x": `${x}px`,
+//               "--y": `${y}px`,
+//             }}
+//           />
+//         );
+//       })}
+//     </>
+//   );
+// }
 
 // ---------- magnetic button ----------
 function MagneticButton({ children, loading, ...rest }) {
@@ -112,7 +112,7 @@ function MagneticButton({ children, loading, ...rest }) {
     <motion.button
       ref={ref}
       type="submit"
-      className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white/80 dark:bg-neutral-900/80 backdrop-blur text-sm font-medium shadow-sm w-full"
+      className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-neutral-300 dark:border-neutral-700 dark:bg-neutral-900/80 backdrop-blur text-sm font-medium shadow-sm w-full"
       style={{ translateX: offset.x, translateY: offset.y }}
       whileTap={{ scale: 0.98 }}
       disabled={loading}
@@ -143,10 +143,10 @@ function MagneticButton({ children, loading, ...rest }) {
 // ---------- input wrapper with nice focus ring ----------
 function Field({ label, children, error }) {
   return (
-    <div className="space-y-1">
+    <div className="space-y-1 dark:text-white">
       <label className="text-sm font-medium">{label}</label>
       <div
-        className={`rounded-xl border bg-white/70 dark:bg-neutral-900/70 backdrop-blur px-3 py-2 focus-within:ring-2 focus-within:ring-sky-400 dark:focus-within:ring-sky-500 border-neutral-200/70 dark:border-neutral-800/70`}
+        className={`rounded-xl border px-3 py-2 border-neutral-200/70 dark:border-neutral-800/70`}
       >
         {children}
       </div>
@@ -159,7 +159,7 @@ function Field({ label, children, error }) {
 function FAQ({ items }) {
   const [open, setOpen] = useState(null);
   return (
-    <div className="divide-y divide-neutral-200/60 dark:divide-neutral-800/60 rounded-2xl border border-neutral-200/60 dark:border-neutral-800/60">
+    <div className="divide-y divide-neutral-500 dark:divide-neutral-800/60 rounded-2xl border">
       {items.map((f, i) => {
         const isOpen = open === i;
         return (
@@ -250,13 +250,13 @@ export default function Contact() {
   };
 
   return (
-    <main className="container-px max-w-6xl mx-auto py-12 space-y-12 text-white">
+    <main className="container-px max-w-6xl mx-auto py-12 space-y-12">
       {/* HERO */}
       <section className="relative overflow-hidden rounded-2xl">
         {/* linear orbs with subtle parallax sweep */}
         <div className="pointer-events-none absolute -inset-24 -z-10">
-          <div className="absolute top-10 left-10 w-64 h-64 rounded-full blur-3xl bg-fuchsia-400/25 animate-[pulse_5s_ease-in-out_infinite]" />
-          <div className="absolute bottom-10 right-10 w-72 h-72 rounded-full blur-3xl bg-sky-400/25 animate-[pulse_6s_ease-in-out_infinite]" />
+          <div className="absolute top-10 left-10 w-64 h-64 rounded-full blur-3xl animate-[pulse_5s_ease-in-out_infinite]" />
+          <div className="absolute bottom-10 right-10 w-72 h-72 rounded-full blur-3xl animate-[pulse_6s_ease-in-out_infinite]" />
         </div>
         <motion.div
           {...fadeUp(0)}
@@ -269,7 +269,7 @@ export default function Contact() {
         </motion.p>
 
         <motion.div {...fadeUp(0.2)} className="mt-5 grid sm:grid-cols-3 gap-3">
-          <div className="card p-4">
+          <div className="border rounded-lg p-4">
             <div className="text-xs opacity-70 mb-1">Email</div>
             <button
               onClick={() => copy(email)}
@@ -281,11 +281,11 @@ export default function Contact() {
               </span>
             </button>
           </div>
-          <div className="card p-4">
+          <div className="border rounded-lg p-4">
             <div className="text-xs opacity-70 mb-1">Location</div>
             <div>{location}</div>
           </div>
-          <div className="card p-4">
+          <div className="border rounded-lg p-4">
             <div className="text-xs opacity-70 mb-1">Office hours</div>
             <div>{hours}</div>
           </div>
@@ -297,7 +297,7 @@ export default function Contact() {
         {/* FORM */}
         <motion.form
           onSubmit={onSubmit}
-          className="card p-6 space-y-4"
+          className="border rounded-lg p-6 space-y-4"
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
@@ -436,7 +436,7 @@ export default function Contact() {
         {/* SIDEBAR: Socials + FAQ + Map placeholder */}
         <div className="space-y-6">
           <motion.div
-            className="card p-5"
+            className="border rounded-lg p-5"
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}

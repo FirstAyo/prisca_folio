@@ -66,7 +66,7 @@ function useTilt(ref, max = 8) {
   }, [ref, max]);
 }
 
-// ---------- counters ----------
+// ---------- counters STAT card helper component ----------
 function StatCard({ value, label, delay = 0 }) {
   const ref = useRef(null);
   const inView = useInView(ref, { margin: "-20% 0px -20% 0px", once: true });
@@ -79,7 +79,7 @@ function StatCard({ value, label, delay = 0 }) {
   }, [inView, mv, value]);
 
   return (
-    <motion.div ref={ref} className="card p-6 text-center" {...fadeUp(delay)}>
+    <motion.div ref={ref} className="border rounded-2xl p-6 text-center" {...fadeUp(delay)}>
       <div className="text-3xl font-semibold">
         <motion.span>{rounded}</motion.span>
       </div>
@@ -106,7 +106,7 @@ function ToolsMarquee({ items, speed = 25 }) {
           {items.map((t, i) => (
             <span
               key={`a-${i}`}
-              className="px-3 py-1 rounded-full text-sm bg-amber-500 dark:bg-neutral-800"
+              className="px-3 py-1 rounded-full text-sm border dark:bg-neutral-800"
             >
               {t}
             </span>
@@ -120,7 +120,7 @@ function ToolsMarquee({ items, speed = 25 }) {
           {items.map((t, i) => (
             <span
               key={`b-${i}`}
-              className="px-3 py-1 rounded-full text-sm bg-amber-500 dark:bg-neutral-800"
+              className="px-3 py-1 rounded-full text-sm border dark:bg-neutral-800"
             >
               {t}
             </span>
@@ -147,7 +147,7 @@ function Timeline() {
         {/* axis */}
         <motion.span
           style={{ scaleY }}
-          className="absolute left-3 top-2 bottom-2 origin-top w-0.5 bg-neutral-200 dark:bg-neutral-800 rounded-full"
+          className="absolute left-3 top-2 bottom-2 origin-top w-0.5 dark:bg-neutral-800 rounded-full"
         />
         <div className="space-y-6">
           {about.timeline.map((t, i) => (
@@ -160,8 +160,8 @@ function Timeline() {
               transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.06 }}
             >
               {/* pin */}
-              <span className="absolute -left-0.5 top-3 w-3 h-3 rounded-full bg-neutral-900 dark:bg-white ring-4 ring-white/70 dark:ring-neutral-900/70" />
-              <div className="grid sm:grid-cols-[160px_1fr] gap-4 items-start card p-4">
+              <span className="absolute -left-0.5 top-3 w-3 h-3 rounded-full bg-neutral-900 dark:bg-white ring-4 dark:ring-neutral-900/70" />
+              <div className="grid sm:grid-cols-[160px_1fr] gap-4 items-start p-4">
                 <div className="text-sm opacity-70">{t.year}</div>
                 <div className="space-y-1">
                   <div className="font-medium">{t.title}</div>
@@ -191,7 +191,7 @@ function Testimonials() {
         {about.testimonials.map((t, i) => (
           <motion.div
             key={i}
-            className="card p-5"
+            className="border rounded-2xl p-5"
             initial={{ opacity: 0, y: 16, rotateX: -8 }}
             whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
             viewport={{ once: true, amount: 0.4 }}
@@ -254,7 +254,7 @@ function MagneticCTA() {
       <motion.a
         ref={ref}
         href={`mailto:${about.profile.email}`}
-        className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-amber-500 dark:bg-neutral-900/80 backdrop-blur text-sm font-medium shadow-sm"
+        className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-neutral-300 dark:border-neutral-700 dark:bg-neutral-900/80 backdrop-blur text-sm font-medium shadow-sm"
         style={{ x, y }}
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
@@ -281,19 +281,19 @@ export default function About() {
   return (
     <main
       ref={containerRef}
-      className="container-px max-w-6xl mx-auto py-12 space-y-12 text-white"
+      className="container-px max-w-6xl mx-auto py-12 space-y-12"
     >
       {/* inline keyframes for marquee/sweep already declared in ToolsMarquee */}
 
       {/* HERO */}
-      <section className="relative overflow-hidden rounded-2xl">
+      <section className="relative overflow-hidden rounded-2xl border">
         {/* floating gradient orbs */}
         <motion.div
           style={{ y: yBg }}
           className="absolute -inset-20 -z-10 opacity-70"
         >
-          <div className="absolute top-10 left-10 w-64 h-64 rounded-full blur-3xl bg-fuchsia-400/30" />
-          <div className="absolute bottom-10 right-10 w-72 h-72 rounded-full blur-3xl bg-sky-400/30" />
+          <div className="absolute top-10 left-10 w-64 h-64 rounded-full blur-3xl" />
+          <div className="absolute bottom-10 right-10 w-72 h-72 rounded-full blur-3xl" />
         </motion.div>
 
         <div className="grid md:grid-cols-[1fr_360px] gap-8 items-center">
@@ -357,7 +357,7 @@ export default function About() {
       </section>
 
       {/* STATS */}
-      <section>
+      <section className="border rounded-2xl">
         <h3 className="text-lg font-semibold mb-4">Impact by the numbers</h3>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
           {about.stats.map((s, i) => (
@@ -378,7 +378,7 @@ export default function About() {
           {about.principles.map((p, i) => (
             <motion.div
               key={i}
-              className="card p-5 space-y-1"
+              className="border rounded-2xl p-5 space-y-1"
               initial={{ opacity: 0, y: 16, scale: 0.98 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, amount: 0.5 }}

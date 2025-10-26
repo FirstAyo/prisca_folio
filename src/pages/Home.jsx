@@ -48,13 +48,13 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="container-px max-w-7xl mx-auto py-12 md:py-16 space-y-14 md:space-y-20">
+    <main className="container-px max-w-7xl mx-auto py-12 md:py-16 space-y-10 md:space-y-10">
       {/* ======================== HERO ======================== */}
-      <section className="relative overflow-hidden rounded-2xl px-4 py-12 md:py-16">
+      <section className="relative overflow-hidden rounded-2xl px-4 py-4 border">
         {/* floating gradient orbs */}
         <div className="pointer-events-none absolute -inset-24 -z-10">
-          <div className="absolute top-10 left-10 w-72 h-72 rounded-full blur-3xl bg-fuchsia-400/25 animate-[pulse_6s_ease-in-out_infinite]" />
-          <div className="absolute bottom-10 right-10 w-80 h-80 rounded-full blur-3xl bg-sky-400/25 animate-[pulse_7s_ease-in-out_infinite]" />
+          <div className="absolute top-10 left-10 w-72 h-72 rounded-full blur-3xl animate-[pulse_6s_ease-in-out_infinite]" />
+          <div className="absolute bottom-10 right-10 w-80 h-80 rounded-full blur-3xl animate-[pulse_7s_ease-in-out_infinite]" />
         </div>
 
         <div className="mx-auto flex flex-col items-center text-center gap-4 max-w-3xl">
@@ -109,7 +109,13 @@ export default function Home() {
         </div>
       </section>
 
-      <AutoLTRMarquee gap={16} duration={28} className="py-2">
+      {/* completed project card moving from left to right */}
+
+      <AutoLTRMarquee
+        gap={16}
+        duration={28}
+        className="py-1 border rounded-2xl"
+      >
         {projects.projects.map((project, i) => (
           <Carousel
             key={i}
@@ -121,7 +127,7 @@ export default function Home() {
       </AutoLTRMarquee>
 
       {/* =================== FEATURED PROJECTS =================== */}
-      <section>
+      <section className="border rounded-2xl">
         <div className="flex items-end justify-between mb-4">
           <h2 className="text-xl font-semibold">Featured work</h2>
           <a
@@ -140,8 +146,8 @@ export default function Home() {
         </div>
       </section>
       {/* =========== INTERACTIVE PROJECT GALLERY (PAN) =========== */}
-      <section className="rounded-2xl overflow-hidden border border-neutral-200/60 dark:border-neutral-800/60">
-        <div className="flex items-center justify-between px-4 py-3">
+      <section className="rounded-2xl overflow-hidden border">
+        {/* <div className="flex items-center justify-between px-4 py-3">
           <div>
             <div className="text-sm font-medium">Playground</div>
             <div className="text-xs opacity-70">
@@ -154,7 +160,7 @@ export default function Home() {
           >
             Explore all →
           </a>
-        </div>
+        </div> */}
         <SpotlightCarousel
           items={(projects.gallery?.items || projects.projects.slice(0, 8)).map(
             (p) => ({
@@ -170,7 +176,7 @@ export default function Home() {
       </section>
       {/* ================== SERVICES TEASER (L→R) ================== */}
       {services?.services?.length ? (
-        <section>
+        <section className="border rounded-2xl p-3">
           <h2 className="text-xl font-semibold mb-4">How I can help</h2>
           <div className="grid md:grid-cols-3 gap-5">
             {services.services.slice(0, 3).map((s, i) => (
@@ -183,7 +189,7 @@ export default function Home() {
       {featured[0] ? <CaseStudyHighlight project={featured[0]} /> : null}
       {/* ================== TESTIMONIAL BLIP ================== */}
       {projects.testimonials?.length ? (
-        <section className="grid md:grid-cols-[1fr_.9fr] gap-6 items-center">
+        <section className="grid md:grid-cols-[1fr_.9fr] gap-6 items-center bg-red-400">
           <motion.div {...fadeUp(0)} className="space-y-2">
             <h3 className="text-lg font-semibold">What partners say</h3>
             <p className="text-sm opacity-80">
@@ -206,7 +212,7 @@ export default function Home() {
         </section>
       ) : null}
       {/* ================== AVAILABILITY / CTA ================== */}
-      <section className="rounded-2xl border border-neutral-200/60 dark:border-neutral-800/60 p-5 md:p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <section className="rounded-2xl border dark:border-neutral-800/60 p-5 md:p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div>
           <div className="text-lg font-semibold">Open for select work</div>
           <div className="text-sm opacity-80">
@@ -237,7 +243,7 @@ export default function Home() {
 // Lightweight marquee component (no deps beyond Tailwind)
 function Marquee({ items = [], speedSec = 28 }) {
   return (
-    <div className="relative mt-6 w-full overflow-hidden rounded-xl border border-neutral-200/60 dark:border-neutral-800/60">
+    <div className="relative mt-6 w-full overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-800/60 text-gray-700">
       <style>{`
         @keyframes hm-marquee { from { transform: translateX(0) } to { transform: translateX(-50%) } }
         .hm-marquee { animation: hm-marquee linear infinite; }
@@ -250,7 +256,7 @@ function Marquee({ items = [], speedSec = 28 }) {
           {items.map((t, i) => (
             <span
               key={`a-${i}`}
-              className="px-3 py-1 rounded-full text-xs bg-neutral-100 dark:bg-neutral-800"
+              className="px-3 py-1 rounded-full text-xs border-gray-700 bg-neutral-100"
             >
               {t}
             </span>
@@ -284,7 +290,7 @@ function ServiceTeaser({ s, i = 0 }) {
       transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.05 }}
     >
       <div
-        className="group relative overflow-hidden rounded-2xl border border-neutral-200/60 dark:border-neutral-800/60 bg-white/70 dark:bg-neutral-900/70 backdrop-blur p-5 shadow-sm will-change-transform"
+        className="group relative overflow-hidden rounded-2xl border border-neutral-200/60 dark:border-neutral-800/60 dark:bg-neutral-900/70 backdrop-blur p-5 shadow-sm will-change-transform"
         style={{ transformStyle: "preserve-3d", backfaceVisibility: "hidden" }}
       >
         <div className="mb-2 inline-flex items-center gap-2 text-xs font-medium px-2 py-1 rounded-lg bg-neutral-100 dark:bg-neutral-800">
@@ -313,8 +319,8 @@ function ServiceTeaser({ s, i = 0 }) {
 // Case study highlight with image tilt zoom on the right
 function CaseStudyHighlight({ project }) {
   return (
-    <section className="grid md:grid-cols-[1.05fr_.95fr] gap-6 items-center">
-      <motion.div {...fadeUp(0)} className="space-y-2">
+    <section className="grid md:grid-cols-[1.05fr_.95fr] gap-6 items-center border rounded-2xl">
+      <motion.div {...fadeUp(0)} className="space-y-2 px-5">
         <h3 className="text-lg font-semibold">Spotlight: {project.title}</h3>
         <p className="text-sm opacity-85">{project.summary}</p>
         <div className="flex items-center gap-2 flex-wrap">
